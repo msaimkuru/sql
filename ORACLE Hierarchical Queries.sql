@@ -57,20 +57,20 @@ GRANT SELECT ON SAIMK.T_SAMPLE_PARENT_CHILD TO PUBLIC;
  *   -----------------------------------
  *   ID  |  PARENT_ID  |  FAVORITE_REGION
  *   -----------------------------------
- *   1	|  -          |  Ireland
- *   2	|  -          |  Turkey
- *   11	|  1	      |  Dublin
- *   12	|  1	      |  Howth(Dublin)
- *   21	|  2	      |  Mugla
- *   22	|  2	      |  Istanbul
- *   23	|  2	      |  Izmir
- *   24	|  2	      |  Ankara
- *   211	|  21	      |  Marmaris
- *   212	|  21	      |  Datca
- *   213	|  21	      |  Bozburun
- *   231	|  23	      |  Ozdere
- *   232	|  23	      |  Alsancak
- *   2311|  231	      |  Cukuralti
+ *   1	 |  -          |  Ireland
+ *   2	 |  -          |  Turkey
+ *   11	 |  1	       |  Dublin
+ *   12	 |  1	       |  Howth(Dublin)
+ *   21	 |  2	       |  Mugla
+ *   22	 |  2	       |  Istanbul
+ *   23	 |  2	       |  Izmir
+ *   24	 |  2	       |  Ankara
+ *   211 |  21	       |  Marmaris
+ *   212 |  21	       |  Datca
+ *   213 |  21	       |  Bozburun
+ *   231 |  23	       |  Ozdere
+ *   232 |  23	       |  Alsancak
+ *   2311|  231	       |  Cukuralti
  *   -----------------------------------
  *
  *  Hierarchical view of data
@@ -151,14 +151,14 @@ ORDER BY t.ID
  * 7) START WITH: specifies the root row(s) of the hierarchy to be listed.
  */
 
---SQL 1
+/* SQL 1 */
 SELECT t.*, CONNECT_BY_ROOT t.ID ROOT_ID_VALUE, CONNECT_BY_ROOT t.FAVORITE_REGION ROOT_FAVORITE_REGION_VALUE, SYS_CONNECT_BY_PATH(FAVORITE_REGION, '->') PATH, LEVEL 
 FROM SAIMK.T_SAMPLE_PARENT_CHILD t
 CONNECT BY PRIOR t.ID = t.PARENT_ID
 ORDER SIBLINGS BY t.ID
 ;
 
---SQL 2
+/* SQL 2 */
 SELECT t.*, CONNECT_BY_ROOT t.ID ROOT_ID_VALUE, CONNECT_BY_ROOT t.FAVORITE_REGION ROOT_FAVORITE_REGION_VALUE, SYS_CONNECT_BY_PATH(FAVORITE_REGION, '->') PATH, LEVEL 
 FROM SAIMK.T_SAMPLE_PARENT_CHILD t
 START WITH t.ID = 2
@@ -166,7 +166,7 @@ CONNECT BY PRIOR t.ID = t.PARENT_ID
 ORDER SIBLINGS BY t.ID
 ;
 
---SQL 3
+/* SQL 3 */
 SELECT t.*, CONNECT_BY_ROOT t.ID ROOT_ID_VALUE, CONNECT_BY_ROOT t.FAVORITE_REGION ROOT_FAVORITE_REGION_VALUE, SYS_CONNECT_BY_PATH(FAVORITE_REGION, '->') PATH, LEVEL 
 FROM SAIMK.T_SAMPLE_PARENT_CHILD t
 START WITH ID IN(1, 2)
@@ -177,7 +177,8 @@ ORDER SIBLINGS BY t.ID
 /*
  * Extra Queries
  */
---SQL4: Only the direct child nodes of ID=1 and ID=2 is listed
+
+/* SQL4: Only the direct child nodes of ID=1 and ID=2 is listed */
 SELECT t.*, CONNECT_BY_ROOT t.ID ROOT_ID_VALUE, CONNECT_BY_ROOT t.FAVORITE_REGION ROOT_FAVORITE_REGION_VALUE, SYS_CONNECT_BY_PATH(FAVORITE_REGION, '->') PATH, LEVEL 
 FROM SAIMK.T_SAMPLE_PARENT_CHILD t
 WHERE LEVEL = 2
@@ -187,7 +188,7 @@ ORDER SIBLINGS BY ID
 ;
 
 
---SQL 5: Only the direct child nodes of ID=2 and their direct child nodes is listed
+/* SQL 5: Only the direct child nodes of ID=2 and their direct child nodes is listed */
 SELECT t.*, CONNECT_BY_ROOT t.ID ROOT_ID_VALUE, CONNECT_BY_ROOT t.FAVORITE_REGION ROOT_FAVORITE_REGION_VALUE, SYS_CONNECT_BY_PATH(FAVORITE_REGION, '->') PATH, LEVEL 
 FROM SAIMK.T_SAMPLE_PARENT_CHILD t
 WHERE LEVEL BETWEEN 2 AND 3
@@ -196,12 +197,12 @@ CONNECT BY PRIOR t.ID = t.PARENT_ID
 ORDER SIBLINGS BY ID
 ;
 
---SQL 6: Generating n Rows using dual
+/* SQL 6: Generating n Rows using dual */
 SELECT ROWNUM, LEVEL
   FROM DUAL
 CONNECT BY LEVEL <= &n
 ;
 
--- Listing 7 days back, beginning from today.
+/* Listing 7 days back, beginning from today. */
 SELECT TO_DATE (TO_CHAR (SYSDATE - LEVEL + 1, 'DD-MON-YYYY ' ) ,'DD-MON-YYYY' ) dates FROM DUAL CONNECT BY LEVEL<= 7
 ;
