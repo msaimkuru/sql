@@ -1,5 +1,5 @@
 /**
- * @author  Saim Kuru
+ * @author Saim Kuru
  * @version 1.0
  * ------------
  * Objectives:
