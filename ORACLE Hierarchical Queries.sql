@@ -54,23 +54,23 @@ GRANT SELECT ON SAIMK.T_SAMPLE_PARENT_CHILD TO PUBLIC;
 /*
  *  Let's have a closer look in the T_SAMPLE_PARENT_CHILD table data.
  *
- *   -----------------------------------
+ *   ------------------------------------
  *   ID  |  PARENT_ID  |  FAVORITE_REGION
- *   -----------------------------------
- *   1  |  -          |  Ireland
- *   2  |  -          |  Turkey
- *   11        |  1         |  Dublin
- *   12        |  1         |  Howth(Dublin)
- *   21        |  2         |  Mugla
- *   22        |  2         |  Istanbul
- *   23        |  2         |  Izmir
- *   24        |  2         |  Ankara
- *   211 |  21              |  Marmaris
- *   212 |  21              |  Datca
- *   213 |  21              |  Bozburun
- *   231 |  23              |  Ozdere
- *   232 |  23              |  Alsancak
- *   2311|  231             |  Cukuralti
+ *   ------------------------------------
+ *   1   |  -          |  Ireland
+ *   2   |  -          |  Turkey
+ *   11  |  1          |  Dublin
+ *   12  |  1          |  Howth(Dublin)
+ *   21  |  2          |  Mugla
+ *   22  |  2          |  Istanbul
+ *   23  |  2          |  Izmir
+ *   24  |  2          |  Ankara
+ *   211 |  21         |  Marmaris
+ *   212 |  21         |  Datca
+ *   213 |  21         |  Bozburun
+ *   231 |  23         |  Ozdere
+ *   232 |  23         |  Alsancak
+ *   2311|  231        |  Cukuralti
  *   -----------------------------------
  *
  *  Hierarchical view of data
