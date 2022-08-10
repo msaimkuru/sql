@@ -1,4 +1,3 @@
---Loading data into 1 database table with a single data file
 userid=saimk@XEPDB1/welcome1
 control=/Users/curlybrace/Documents/GitHub/sql/Oracle/01-SQLLoader/Examples/EXAMPLE01_email.ctl
 log=/Users/curlybrace/Documents/GitHub/sql/Oracle/01-SQLLoader/Examples/EXAMPLE01_email.log
