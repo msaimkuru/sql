@@ -1,0 +1,6 @@
+userid=saimk@XEPDB1/welcome1
+control=/Users/curlybrace/Documents/GitHub/sql/Oracle/Examples/SqlLoader/EXAMPLE01_email.ctl
+log=/Users/curlybrace/Documents/GitHub/sql/Oracle/Examples/SqlLoader/EXAMPLE01_email.log
+bad=/Users/curlybrace/Documents/GitHub/sql/Oracle/Examples/SqlLoader/EXAMPLE01_email.bad
+data=/Users/curlybrace/Documents/GitHub/sql/Oracle/Examples/SqlLoader/EXAMPLE01_email.dat
+direct=true

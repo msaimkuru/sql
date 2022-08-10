@@ -1,0 +1,5 @@
+cd /Users/curlybrace/DevTools/Oracle/instantclient_19_8
+
+./sqlldr parfile=/Users/curlybrace/Documents/GitHub/sql/Oracle/Examples/SqlLoader/EXAMPLE01_email.par
+
+./sqlldr parfile=/Users/curlybrace/Documents/GitHub/sql/Oracle/Examples/SqlLoader/EXAMPLE02_emailuser.par
