@@ -1,3 +1,4 @@
+--Loading data into 2 database tables
 LOAD DATA
 TRUNCATE
 INTO TABLE saimk.sqlldr_example1_emails
