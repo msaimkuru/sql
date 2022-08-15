@@ -1,0 +1,6 @@
+userid=saimk@XEPDB1/welcome1
+control=/Users/curlybrace/Documents/GitHub/sql/Oracle/01-SQLLoader/Examples/EXAMPLE03_rest_open_hours.ctl
+log=/Users/curlybrace/Documents/GitHub/sql/Oracle/01-SQLLoader/Examples/EXAMPLE03_rest_open_hours.log
+bad=/Users/curlybrace/Documents/GitHub/sql/Oracle/01-SQLLoader/Examples/EXAMPLE03_rest_open_hours.bad
+data=/Users/curlybrace/Documents/GitHub/sql/Oracle/01-SQLLoader/Examples/EXAMPLE03_rest_open_hours.csv
+direct=true

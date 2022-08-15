@@ -3,3 +3,5 @@ cd /Users/curlybrace/DevTools/Oracle/instantclient_19_8
 ./sqlldr parfile=/Users/curlybrace/Documents/GitHub/sql/Oracle/01-SQLLoader/Examples/EXAMPLE01_email.par
 
 ./sqlldr parfile=/Users/curlybrace/Documents/GitHub/sql/Oracle/01-SQLLoader/Examples/EXAMPLE02_emailuser.par
+
+./sqlldr parfile=/Users/curlybrace/Documents/GitHub/sql/Oracle/01-SQLLoader/Examples/EXAMPLE03_rest_open_hours.par
