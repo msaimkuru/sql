@@ -9,6 +9,8 @@ CREATE TABLE park (
     description NVARCHAR2(2000) /* for now, change to NCLOB later*/
 );
 
+COMMENT ON TABLE park IS 'Examples Resource of bthe book Oreilly Oracle Regular Expressions Pocket Reference'
+
 CREATE INDEX park_descr_phone ON park (
    REGEXP_SUBSTR(description,
    '[[:digit:]]{3}[^[:digit:]][[:digit:]]{4}'));
