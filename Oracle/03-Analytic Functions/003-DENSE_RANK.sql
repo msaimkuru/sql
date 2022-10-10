@@ -2,7 +2,7 @@
  * -----------------------------------------------------------------------------
  * Resource:
  * ----------------------------------------------------------------------------- 
- * https://oracle-base.com/articles/misc/rank-dense-rank-first-last-analytic-functions#rank
+ * https://oracle-base.com/articles/misc/rank-dense-rank-first-last-analytic-functions#dense_rank
  * -----------------------------------------------------------------------------  
  */ 
 /*
