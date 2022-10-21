@@ -59,7 +59,9 @@ FROM  TABLE( DBMS_XPLAN.display_cursor('77wjv8jkfqhr3', NULL, 'TYPICAL') )
    ---------------------------------------------------
  
       1 - access(""B"".""COLOUR""=""C"".""COLOUR"")
- * 
+ *------------------------------------------------------------------------------
+ * The order of operations in this plan is:
+ *------------------------------------------------------------------------------
  * Start from the top (SELECT STATEMENT) and go down the tree to the first leaf. 
  * This is the TABLE ACCESS FULL of the COLOURS table.
  *
@@ -72,5 +74,6 @@ FROM  TABLE( DBMS_XPLAN.display_cursor('77wjv8jkfqhr3', NULL, 'TYPICAL') )
  *
  * All the children of step 1 have been accessed, so pass the rows that survive 
  * the join to the SELECT STATEMENT and back to the client.
+ *------------------------------------------------------------------------------ 
  */
 /*----------------------------------------------------------------------------*/

@@ -58,16 +58,16 @@ FROM  TABLE( DBMS_XPLAN.display_cursor('btgm2ch2d6j7p', NULL, 'TYPICAL') )
       1 - access(""C"".""COLOUR""=""B"".""COLOUR"")
       2 - access(""C"".""COLOUR""=""P"".""COLOUR"")
       3 - access(""C"".""COLOUR""=""T"".""COLOUR"")
- *
+ *------------------------------------------------------------------------------
  * The order of operations in this plan is:
- *
+ *------------------------------------------------------------------------------
  * Start from the top of the plan (SELECT STATEMENT) and go down to the first 
  * leaf. This is the TABLE ACCESS FULL of the COLOURS table in execution plan 
  * step 4.
  *
- * Pass the rows from this table up to the first leaf’s parent, which is the HASH JOIN in step 3.
- * Find the next unvisited child, which is the TABLE ACCESS FULL of the 
- * CUDDLY_TOYS table in step 5.
+ * Pass the rows from this table up to the first leaf’s parent, which is the 
+ * HASH JOIN in step 3. Find the next unvisited child, which is the 
+ * TABLE ACCESS FULL of the CUDDLY_TOYS table in step 5.
  *
  * Pass the rows to the HASH JOIN in step 3. Step 3 has no more children, 
  * so return the rows that survive the HASH JOIN in step 3 to the HASH JOIN in 
@@ -83,5 +83,6 @@ FROM  TABLE( DBMS_XPLAN.display_cursor('btgm2ch2d6j7p', NULL, 'TYPICAL') )
  * Repeat the process until you’ve run all the operations. So the complete order 
  * for accessing the execution plan step IDs is: 
  * 4, 3, 5, 3, 2, 6, 2, 1, 7, 1, and 0.
+ *------------------------------------------------------------------------------ 
  */
 /*----------------------------------------------------------------------------*/
