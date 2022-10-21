@@ -2,7 +2,7 @@
  * -----------------------------------------------------------------------------
  * Resource: 
  * -----------------------------------------------------------------------------
- * https://livesql.oracle.com/apex/livesql/file/tutorial_IEHP37S6LTWIIDQIR436SJ59L.html
+ * https://livesql.oracle.com/apex/livesql/file/tutorial_JN0V7TL1WLTHR9MSJKJ4MAXQF.html
  * -----------------------------------------------------------------------------
  * 1. Get a Basic Plan with DBMS_XPlan
  * ----------------------------------------------------------------------------- 
