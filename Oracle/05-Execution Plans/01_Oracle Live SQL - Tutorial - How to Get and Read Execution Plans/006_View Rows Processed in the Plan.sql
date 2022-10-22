@@ -4,7 +4,7 @@
  * -----------------------------------------------------------------------------
  * https://livesql.oracle.com/apex/livesql/file/tutorial_JN0V7TL1WLTHR9MSJKJ4MAXQF.html
  * -----------------------------------------------------------------------------
- * 8. View Rows Processed in the Plan
+ * 8,9. View Rows Processed in the Plan
  * ----------------------------------------------------------------------------- 
  * A basic plan only gives you its shape. To assess whether the plan is good, 
  * you need to see the number of rows flowing out of each step of the plan.
