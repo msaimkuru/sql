@@ -62,18 +62,18 @@ FROM  TABLE( DBMS_XPLAN.display_cursor('77wjv8jkfqhr3', NULL, 'TYPICAL') )
  *------------------------------------------------------------------------------
  * The order of operations in this plan is:
  *------------------------------------------------------------------------------
- * Start from the top (SELECT STATEMENT) and go down the tree to the first leaf. 
- * This is the TABLE ACCESS FULL of the COLOURS table.
+ * 1) Start from the top (SELECT STATEMENT) and go down the tree to the first 
+ * leaf. This is the TABLE ACCESS FULL of the COLOURS table.
  *
- * Pass the rows from this table up to the first leaf’s parent, the HASH JOIN.
+ * 2) Pass the rows from this table up to the first leaf’s parent,the HASH JOIN.
  *
- * Look for the next unvisited child of step 1. This is the TABLE ACCESS FULL 
+ * 3) Look for the next unvisited child of step 1. This is the TABLE ACCESS FULL 
  * of the BRICKS table.
  *
- * Pass the rows from this table up to its parent, the HASH JOIN.
+ * 4) Pass the rows from this table up to its parent, the HASH JOIN.
  *
- * All the children of step 1 have been accessed, so pass the rows that survive 
- * the join to the SELECT STATEMENT and back to the client.
+ * 5) All the children of step 1 have been accessed, so pass the rows that 
+ * survive the join to the SELECT STATEMENT and back to the client.
  *------------------------------------------------------------------------------ 
  */
 /*----------------------------------------------------------------------------*/
