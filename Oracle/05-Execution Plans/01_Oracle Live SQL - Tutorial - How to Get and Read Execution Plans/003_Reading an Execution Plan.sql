@@ -27,7 +27,7 @@ JOIN saimk.colours c
 ON b.colour = c.colour
 ;
 
---find sql id foer the executed sql
+--find sql id for the executed sql
 SELECT t.sql_id, t.* FROM v$sql t 
 WHERE t.sql_text LIKE '%b.*, c.* /* example 3.1 */%'
 ORDER BY t.LAST_LOAD_TIME DESC

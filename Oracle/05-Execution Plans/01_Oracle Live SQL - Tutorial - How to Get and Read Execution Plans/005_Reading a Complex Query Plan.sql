@@ -21,7 +21,7 @@ ON t.colour = c.colour
 GROUP  BY c.colour
 ;
 
---find sql id foer the executed sql
+--find sql id for the executed sql
 SELECT t.sql_id, t.* FROM v$sql t 
 WHERE t.sql_text LIKE '%SELECT c.colour, COUNT(*)%'
 AND t.sql_text NOT LIKE '%ORDER BY t.LAST_LOAD_TIME DESC%'

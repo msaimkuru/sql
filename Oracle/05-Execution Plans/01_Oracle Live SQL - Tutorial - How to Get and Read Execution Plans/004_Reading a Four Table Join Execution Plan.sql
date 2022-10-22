@@ -18,7 +18,7 @@ JOIN saimk.bricks b
 ON c.colour = b.colour
 ;
 
---find sql id foer the executed sql
+--find sql id for the executed sql
 SELECT t.sql_id, t.* FROM v$sql t 
 WHERE t.sql_text LIKE '%c.*, pen_type, shape, toy_name%'
 AND t.sql_text NOT LIKE '%ORDER BY t.LAST_LOAD_TIME DESC%'
